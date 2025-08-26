@@ -1,14 +1,12 @@
 import { defineConfig } from 'vitest/config'
-import vue from '@vitejs/plugin-vue'
-import { fileURLToPath } from 'node:url'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [react()],
   test: {
+    globals: true,
     environment: 'jsdom',
     setupFiles: ['./src/tests/setup.ts'],
-    globals: true,
-    exclude: ['**/node_modules/**', '**/dist/**', '**/cypress/**', '**/.{idea,git,cache,output,temp}/**', '**/tests/e2e/**'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
@@ -19,11 +17,6 @@ export default defineConfig({
         '**/*.config.*',
         'dist/'
       ]
-    }
-  },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })

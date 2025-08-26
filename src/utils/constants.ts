@@ -1,6 +1,6 @@
 // Application constants
 
-export const APP_NAME = 'Vue SPA'
+export const APP_NAME = 'React SPA'
 export const VERSION = '1.0.0'
 
 export const API_ENDPOINTS = {
