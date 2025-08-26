@@ -1,7 +1,4 @@
-import { config } from '@vue/test-utils'
-
-// Global test configuration
-config.global.config.warnHandler = () => {}
+import '@testing-library/jest-dom'
 
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
